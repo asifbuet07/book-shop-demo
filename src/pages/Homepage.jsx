@@ -1,16 +1,14 @@
 import React from "react";
-import { Navbar } from "../components/shared/Navbar";
 import Banner from "../components/banner";
-import BookList from "../components/book/booklist";
-import Footer from "../components/shared/Footer";
+import BookList from "../components/book/BookList";
 
-export const Homepage = () => {
+const Homepage = () => {
   return (
-    <div className="w-full">
-      <Navbar />
+    <div>
       <Banner />
       <BookList />
-      <Footer />
     </div>
   );
 };
+
+export default Homepage;

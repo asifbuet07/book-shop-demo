@@ -48,7 +48,7 @@ export const Navbar = () => {
             </ul>
           </div>
           <img class="w-12" alt="Book Shop Logo" src={logo} />
-          <a class="btn btn-ghost text-red-500 text-2xl">Book Shop</a>
+          <a class="btn btn-ghost text-red-500 text-2xl">Book Heaven</a>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal text-black px-1">

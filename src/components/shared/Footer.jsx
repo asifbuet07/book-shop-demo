@@ -2,12 +2,12 @@ import React from "react";
 
 function Footer() {
   return (
-    <section>
+    <section className="mt-5">
       <footer className="footer bg-slate-400 text-black p-10">
         <div className="flex flex-col gap-8">
           <aside>
             <h6 className="footer-title">Office Address</h6>
-            <p>Food Heaven Ltd.</p>
+            <p>Book Heaven Ltd.</p>
             <p>Chamber Buildings, Church Hill, Navan, Co. Meath, C15 YKR4</p>
           </aside>
           <nav className="md:place-self-center md:justify-self-end">
