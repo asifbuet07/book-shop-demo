@@ -47,7 +47,7 @@ export const Navbar = () => {
               </li>
             </ul>
           </div>
-          <img class="w-12" alt="Book Shop Logo" src={logo} />
+          <img class="w-12" alt="Book Heaven Logo" src={logo} />
           <a class="btn btn-ghost text-blue-600 text-2xl">Book Heaven</a>
         </div>
         <div class="navbar-center hidden lg:flex">
