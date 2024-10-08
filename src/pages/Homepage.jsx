@@ -2,7 +2,7 @@ import React from "react";
 import Banner from "../components/banner";
 import BookList from "../components/book/BookList";
 
-const Homepage = () => {
+const HomePage = () => {
   return (
     <div>
       <Banner />
@@ -11,4 +11,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import logo from "../../assets/images/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../utils/AuthProvider";
+import userPic from "../../assets/icons/user.png";
 
 export const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -85,12 +86,19 @@ export const Navbar = () => {
           </ul>
         </div>
         <div class="navbar-end gap-2">
-          <Link
-            to="/register"
-            class="btn bg-orange-600 hover:bg-orange-400 border-orange-600 text-black font-bold"
-          >
-            Register
-          </Link>
+          {user ? (
+            <div className="flex items-center">
+              <span className="text-white mr-3">{user.displayName}</span>
+              <img className="w-10 rounded-full" alt="User" src={userPic} />
+            </div>
+          ) : (
+            <Link
+              to="/register"
+              class="btn bg-orange-600 hover:bg-orange-400 border-orange-600 text-black font-bold"
+            >
+              Register
+            </Link>
+          )}
 
           {user ? (
             <button

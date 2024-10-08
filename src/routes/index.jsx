@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import LoginPage from "../pages/LoginPage";
 import RegistrationPage from "../pages/RegistrationPage";
 import HomePage from "../pages/Homepage";
+import BookDetails from "../pages/BookDetails";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/book/:bookId",
+        element: <BookDetails />,
+        loader: ({ params }) =>
+          fetch(`https://bootcamp-a4-server.vercel.app/api/books/${params.id}`),
       },
       {
         path: "/about",
