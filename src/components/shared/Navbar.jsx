@@ -1,11 +1,25 @@
-import React from "react";
+import { useContext } from "react";
 import logo from "../../assets/images/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../utils/AuthProvider";
 
 export const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <section>
-      <div class="navbar bg-slate-400">
+      <div class="navbar bg-slate-400 mb-5">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -48,7 +62,9 @@ export const Navbar = () => {
             </ul>
           </div>
           <img class="w-12" alt="Book Heaven Logo" src={logo} />
-          <a class="btn btn-ghost text-blue-600 text-2xl">Book Heaven</a>
+          <Link to="/" class="btn btn-ghost text-blue-600 text-2xl">
+            Book Heaven
+          </Link>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal text-black px-1">
@@ -69,15 +85,28 @@ export const Navbar = () => {
           </ul>
         </div>
         <div class="navbar-end gap-2">
-          <a class="btn bg-orange-600 hover:bg-orange-400 border-orange-600 text-black font-bold">
-            Buy Book
-          </a>
           <Link
-            to="/login"
-            class="btn bg-cyan-500 hover:bg-cyan-400 border-cyan-500 text-black font-bold"
+            to="/register"
+            class="btn bg-orange-600 hover:bg-orange-400 border-orange-600 text-black font-bold"
           >
-            Log In
+            Register
           </Link>
+
+          {user ? (
+            <button
+              onClick={handleSignOut}
+              class="btn bg-cyan-500 hover:bg-cyan-400 border-cyan-500 text-black font-bold"
+            >
+              Log Out
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              class="btn bg-cyan-500 hover:bg-cyan-400 border-cyan-500 text-black font-bold"
+            >
+              Log In
+            </Link>
+          )}
         </div>
       </div>
     </section>

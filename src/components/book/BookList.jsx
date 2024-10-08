@@ -4,7 +4,7 @@ import Book from "./book";
 function BookList() {
   const [books, setBooks] = useState([]);
   useEffect(() => {
-    fetch("books-data.json")
+    fetch("https://bootcamp-a4-server.vercel.app/api/books")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error("Error:", error));
