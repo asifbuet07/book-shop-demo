@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         path: "/book/:id",
         element: <BookDetails />,
         loader: ({ params }) =>
-          fetch(`https://bootcamp-a4-server.vercel.app/api/books/${params.id}`),
+          fetch(`https://bootcamp-a4-server.vercel.app/api/book/${params.id}`),
       },
       {
         path: "/about",
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
         path: "/private-books",
         element: (
           <PrivateRoutes>
-        <PrivateBooksPage />
-        </PrivateRoutes>
+            <PrivateBooksPage />
+          </PrivateRoutes>
         ),
       },
       {

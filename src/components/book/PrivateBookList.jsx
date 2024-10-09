@@ -4,7 +4,7 @@ import Book from "./book";
 function PrivateBookList() {
   const [books, setBooks] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/api/private-books")
+    fetch("https://bootcamp-a4-server.vercel.app/api/private-books")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error("Error:", error));
