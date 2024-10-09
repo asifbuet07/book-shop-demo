@@ -2,8 +2,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import LoginPage from "../pages/LoginPage";
 import RegistrationPage from "../pages/RegistrationPage";
-import HomePage from "../pages/Homepage";
+import HomePage from "../pages/HomePage";
 import BookDetails from "../pages/BookDetails";
+import PrivateBooksPage from "../pages/PrivateBooksPage";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +18,7 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/book/:bookId",
+        path: "/book/:id",
         element: <BookDetails />,
         loader: ({ params }) =>
           fetch(`https://bootcamp-a4-server.vercel.app/api/books/${params.id}`),
@@ -26,8 +28,12 @@ const router = createBrowserRouter([
         element: <div>Hello Asif!</div>,
       },
       {
-        path: "/blog",
-        element: <div>Hello Asif!</div>,
+        path: "/private-books",
+        element: (
+          <PrivateRoutes>
+        <PrivateBooksPage />
+        </PrivateRoutes>
+        ),
       },
       {
         path: "/faq",

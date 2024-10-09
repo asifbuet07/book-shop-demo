@@ -41,14 +41,14 @@ export const Navbar = () => {
             </div>
             <ul
               tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
                 <a>Item 1</a>
               </li>
               <li>
                 <a>Parent</a>
-                <ul class="p-2">
+                <ul className="p-2">
                   <li>
                     <a>Submenu 1</a>
                   </li>
@@ -62,21 +62,21 @@ export const Navbar = () => {
               </li>
             </ul>
           </div>
-          <img class="w-12" alt="Book Heaven Logo" src={logo} />
+          <img className="w-12" alt="Book Heaven Logo" src={logo} />
           <Link to="/" class="btn btn-ghost text-blue-600 text-2xl">
             Book Heaven
           </Link>
         </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal text-black px-1">
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal text-black px-1">
             <li>
-              <a class="text-green-200 text-xl font-bold">Home</a>
+              <Link to="/" class="text-green-200 text-xl font-bold">Home</Link>
             </li>
             <li>
-              <a class="text-green-200 text-xl font-bold">About</a>
+              <Link className="text-green-200 text-xl font-bold">About</Link>
             </li>
             <li>
-              <a class="text-green-200 text-xl font-bold">Blog</a>
+              <Link to="/private-books" className="text-green-200 text-xl font-bold">Private Books</Link>
             </li>
             <li>
               <Link to="/faq" class="text-green-200 text-xl font-bold">
@@ -85,7 +85,7 @@ export const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div class="navbar-end gap-2">
+        <div className="navbar-end gap-2">
           {user ? (
             <div className="flex items-center">
               <span className="text-white mr-3">{user.displayName}</span>
@@ -94,7 +94,7 @@ export const Navbar = () => {
           ) : (
             <Link
               to="/register"
-              class="btn bg-orange-600 hover:bg-orange-400 border-orange-600 text-black font-bold"
+              className="btn bg-orange-600 hover:bg-orange-400 border-orange-600 text-black font-bold"
             >
               Register
             </Link>
@@ -103,14 +103,14 @@ export const Navbar = () => {
           {user ? (
             <button
               onClick={handleSignOut}
-              class="btn bg-cyan-500 hover:bg-cyan-400 border-cyan-500 text-black font-bold"
+              className="btn bg-cyan-500 hover:bg-cyan-400 border-cyan-500 text-black font-bold"
             >
               Log Out
             </button>
           ) : (
             <Link
               to="/login"
-              class="btn bg-cyan-500 hover:bg-cyan-400 border-cyan-500 text-black font-bold"
+              className="btn bg-cyan-500 hover:bg-cyan-400 border-cyan-500 text-black font-bold"
             >
               Log In
             </Link>
