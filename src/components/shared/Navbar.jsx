@@ -20,7 +20,7 @@ export const Navbar = () => {
 
   return (
     <section>
-      <div class="navbar bg-slate-400 mb-5">
+      <div class="navbar bg-orange-300 mb-5">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -41,45 +41,56 @@ export const Navbar = () => {
             </div>
             <ul
               tabindex="0"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-orange-200 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Item 1</a>
+                <Link to="/all-books" class="text-red-600 text-xl font-bold">
+                  All Books
+                </Link>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <Link className="text-red-600 text-xl font-bold">About</Link>
               </li>
               <li>
-                <a>Item 3</a>
+                <Link
+                  to="/private-books"
+                  className="text-red-600 text-xl font-bold"
+                >
+                  Private Books
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" class="text-red-600 text-xl font-bold">
+                  FAQ
+                </Link>
               </li>
             </ul>
           </div>
           <img className="w-12" alt="Book Heaven Logo" src={logo} />
-          <Link to="/" class="btn btn-ghost text-blue-600 text-2xl">
+          <Link to="/" class="btn btn-ghost text-blue-500 text-2xl font-bold">
             Book Heaven
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal text-black px-1">
             <li>
-              <Link to="/" class="text-green-200 text-xl font-bold">Home</Link>
+              <Link to="/all-books" class="text-red-600 text-xl font-bold">
+                All Books
+              </Link>
             </li>
             <li>
-              <Link className="text-green-200 text-xl font-bold">About</Link>
+              <Link className="text-red-600 text-xl font-bold">About</Link>
             </li>
             <li>
-              <Link to="/private-books" className="text-green-200 text-xl font-bold">Private Books</Link>
+              <Link
+                to="/private-books"
+                className="text-red-600 text-xl font-bold"
+              >
+                Private Books
+              </Link>
             </li>
             <li>
-              <Link to="/faq" class="text-green-200 text-xl font-bold">
+              <Link to="/faq" class="text-red-600 text-xl font-bold">
                 FAQ
               </Link>
             </li>

@@ -6,6 +6,8 @@ import HomePage from "../pages/HomePage";
 import BookDetails from "../pages/BookDetails";
 import PrivateBooksPage from "../pages/PrivateBooksPage";
 import PrivateRoutes from "./PrivateRoutes";
+import FAQPage from "../pages/FAQPage";
+import AllBooksPage from "../pages/AllBooksPage";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/all-books",
+        element: <AllBooksPage />,
       },
       {
         path: "/book/:id",
@@ -37,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/faq",
-        element: <div>Welcome to FAQ page!</div>,
+        element: <FAQPage />,
       },
       {
         path: "/login",

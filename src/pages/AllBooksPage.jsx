@@ -1,15 +1,13 @@
 import React, { useContext } from "react";
-import Banner from "../components/banner";
 import BookList from "../components/book/BookList";
 import PrivateBookList from "../components/book/PrivateBookList";
 import { AuthContext } from "../utils/AuthProvider";
 
-const HomePage = () => {
+function AllBooksPage() {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="flex flex-col items-center">
-      <Banner />
+    <div>
       <BookList />
       {user ? (
         <PrivateBookList />
@@ -18,6 +16,6 @@ const HomePage = () => {
       )}
     </div>
   );
-};
+}
 
-export default HomePage;
+export default AllBooksPage;

@@ -11,7 +11,7 @@ function BookList() {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-10">
       {books?.map((bookItem) => (
         <Book book={bookItem} />
       ))}

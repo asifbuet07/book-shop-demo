@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <section className="mt-5">
-      <footer className="footer bg-slate-400 text-black p-10">
+      <footer className="footer bg-orange-300 text-black p-10">
         <div className="flex flex-col gap-8">
           <aside>
             <h6 className="footer-title">Office Address</h6>
@@ -70,12 +70,12 @@ function Footer() {
                 placeholder="username@site.com"
                 className="input input-bordered join-item"
               />
-              <button className="btn btn-primary join-item">Subscribe</button>
+              <button className="btn bg-orange-600 join-item">Subscribe</button>
             </div>
           </fieldset>
         </form>
       </footer>
-      <footer className="footer footer-center bg-slate-400 text-black border-base-300 border-t px-10 py-4">
+      <footer className="footer footer-center bg-orange-300 text-black pb-4">
         <p>
           Copyright © {new Date().getFullYear()} - All rights reserved by Book
           Heaven Ltd
